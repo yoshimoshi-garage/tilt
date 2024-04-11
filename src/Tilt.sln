@@ -49,6 +49,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Logging", "..\..\..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Logging.LogProviders", "..\..\..\wilderness\Meadow.Logging\Source\Meadow.Logging.LogProviders\Driver\Meadow.Logging.LogProviders.csproj", "{6C8C3616-A6EE-47DB-BF22-8AD7999371E5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{BD8316F7-FC97-4C92-83D6-3BA7A79AB23B}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -13,6 +13,9 @@ There are YouTube videos covering some of the more interesting parts of the buil
 - [Configuring from hardware](https://youtu.be/cxtnke1KUNc)  
 - [Measuring Power](https://youtu.be/5RCswohoTgE)  
 
+## Schematic
+
+![](doc/schematic.png)
 
 ## Bill of Materials
 
