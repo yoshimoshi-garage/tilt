@@ -2,6 +2,7 @@
 using Meadow.Devices;
 using Meadow.Foundation.Leds;
 using Meadow.Hardware;
+using Meadow.Logging;
 using Meadow.Peripherals.Leds;
 using System.Threading.Tasks;
 
@@ -11,19 +12,35 @@ public class FeatherV2App : App<F7FeatherV2>
 {
     private AppEngine _engine;
     private RgbLed _onBoardLed;
+    private UdpLogger? _udpLogger;
 
     public override Task Initialize()
     {
         Device.PlatformOS.NtpClient.TimeChanged += NtpClient_TimeChanged;
 
-        _ = Device.NetworkAdapters.Primary<IWiFiNetworkAdapter>().Connect("interwebs", "1234567890");
+        var nic = Device.NetworkAdapters.Primary<IWiFiNetworkAdapter>();
+        if (nic != null)
+        {
+            nic.NetworkConnected += (s, e) =>
+            {
+                if (_udpLogger == null)
+                {
+                    _udpLogger = new UdpLogger();
+                    Resolver.Log.Info("Adding UDP logger");
+                    Resolver.Log.AddProvider(_udpLogger);
+                }
+            };
+
+            _ = nic.Connect("interwebs", "1234567890");
+        }
 
         var i2c = Device.CreateI2cBus(Meadow.Hardware.I2cBusSpeed.Fast);
 
         var settings = new PlatformSettings
         {
             OptionPin = Device.Pins.D05,
-            OptionSelectedAction = OptionAction
+            OptionSelectedAction = OptionAction,
+            InjectRandomNetworkDisconnect = false
         };
 
         _onBoardLed = new RgbLed(

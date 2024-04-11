@@ -24,4 +24,5 @@ public class PlatformSettings
     public int? UpDownAxis { get; set; }
     public bool UpDownInvert { get; set; }
     public Action<DebugOption>? OptionSelectedAction { get; set; }
+    public bool InjectRandomNetworkDisconnect { get; set; }
 }

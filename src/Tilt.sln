@@ -45,6 +45,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sensors.Power.Ina2xx", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serialization.MicroJson", "..\..\..\wilderness\Meadow.Foundation\Source\Meadow.Foundation.Libraries_and_Frameworks\Serialization.MicroJson\Driver\Serialization.MicroJson.csproj", "{F41D1652-2FE7-44F1-80C9-8D8CFEB89251}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Logging", "..\..\..\wilderness\Meadow.Logging\Source\Meadow.Logging\lib\Meadow.Logging.csproj", "{EA0644DD-97AB-4BA0-AC55-779134DFB09F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Logging.LogProviders", "..\..\..\wilderness\Meadow.Logging\Source\Meadow.Logging.LogProviders\Driver\Meadow.Logging.LogProviders.csproj", "{6C8C3616-A6EE-47DB-BF22-8AD7999371E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +157,14 @@ Global
 		{F41D1652-2FE7-44F1-80C9-8D8CFEB89251}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F41D1652-2FE7-44F1-80C9-8D8CFEB89251}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F41D1652-2FE7-44F1-80C9-8D8CFEB89251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA0644DD-97AB-4BA0-AC55-779134DFB09F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA0644DD-97AB-4BA0-AC55-779134DFB09F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA0644DD-97AB-4BA0-AC55-779134DFB09F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA0644DD-97AB-4BA0-AC55-779134DFB09F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C8C3616-A6EE-47DB-BF22-8AD7999371E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8C3616-A6EE-47DB-BF22-8AD7999371E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C8C3616-A6EE-47DB-BF22-8AD7999371E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8C3616-A6EE-47DB-BF22-8AD7999371E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,6 +186,8 @@ Global
 		{17C67695-87F8-4039-937D-AA06DA79E41A} = {13FB0023-257C-4AE0-B882-6E3B882FF755}
 		{6108C48B-7D09-45FC-9DE3-723A813B4BB8} = {13FB0023-257C-4AE0-B882-6E3B882FF755}
 		{F41D1652-2FE7-44F1-80C9-8D8CFEB89251} = {13FB0023-257C-4AE0-B882-6E3B882FF755}
+		{EA0644DD-97AB-4BA0-AC55-779134DFB09F} = {13FB0023-257C-4AE0-B882-6E3B882FF755}
+		{6C8C3616-A6EE-47DB-BF22-8AD7999371E5} = {13FB0023-257C-4AE0-B882-6E3B882FF755}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7F4634EB-EE71-4459-9552-B1C7B01E4457}

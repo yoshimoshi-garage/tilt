@@ -14,7 +14,13 @@ internal class Program : App<RaspberryPi>
     public override Task Initialize()
     {
         var i2c = Device.CreateI2cBus();
-        _engine = new AppEngine(i2c);
+
+        var settings = new PlatformSettings
+        {
+            OptionPin = Device.Pins.GPIO27,
+            OptionSelectedAction = null
+        };
+        _engine = new AppEngine(i2c, settings);
 
         return base.Initialize();
     }

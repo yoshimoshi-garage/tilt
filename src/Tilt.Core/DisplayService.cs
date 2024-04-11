@@ -120,7 +120,8 @@ public class DisplayService
         _instantChart = new VerticalBarChart(0, 20, _screen.Width, _screen.Height - 20)
         {
             BarSpacing = 0,
-            AxisStroke = 1
+            AxisStroke = 1,
+            ShowXAxisLabels = false
         };
 
         _powerLayout.Controls.Add(
