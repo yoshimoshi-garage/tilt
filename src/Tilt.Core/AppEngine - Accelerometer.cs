@@ -74,20 +74,20 @@ public partial class AppEngine
 
             if (ud > 1)
             {
-                _displayService.MoveCircleUp();
+                _displayService?.MoveCircleUp();
             }
             else if (ud < -1)
             {
-                _displayService.MoveCircleDown();
+                _displayService?.MoveCircleDown();
             }
 
             if (lr > 1)
             {
-                _displayService.MoveCircleLeft();
+                _displayService?.MoveCircleLeft();
             }
             else if (lr < -1)
             {
-                _displayService.MoveCircleRight();
+                _displayService?.MoveCircleRight();
             }
         }
     }

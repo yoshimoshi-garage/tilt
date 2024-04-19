@@ -34,7 +34,8 @@ public class DisplayService
 
     public DisplayService(IPixelDisplay display)
     {
-        _screen = new DisplayScreen(display, RotationType._180Degrees);
+        _screen = new DisplayScreen(display);
+        //_screen = new DisplayScreen(display, RotationType._180Degrees);
         for (var i = 0; i < 60; i++)
         {
             _currentSeries.Add(0);

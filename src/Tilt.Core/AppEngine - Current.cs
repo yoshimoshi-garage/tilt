@@ -48,19 +48,26 @@ public partial class AppEngine
         {
             var mean = _currentBuffer.Average(c => c.Milliamps);
             Resolver.Log.Info($"Mean current over the past minute: {mean:N0} mA");
-            _displayService.UpdateMeanCurrent(mean);
+            _displayService?.UpdateMeanCurrent(mean);
 
-            Resolver.MeadowCloudService.SendEvent(
-                new CloudEvent
-                {
-                    Description = $"Tilt Power Usage",
-                    Measurements = new()
+            try
+            {
+                Resolver.MeadowCloudService.SendEvent(
+                    new CloudEvent
                     {
+                        Description = $"Tilt Power Usage",
+                        Measurements = new()
+                        {
                         { "MeanCurrent", mean }
-                    }
-                });
+                        }
+                    });
+            }
+            catch (Exception ex)
+            {
+                Resolver.Log.Error($"Failed to send Current data to Cloud: {ex.Message}");
+            }
         }
 
-        _displayService.UpdateCurrent(e.New);
+        _displayService?.UpdateCurrent(e.New);
     }
 }

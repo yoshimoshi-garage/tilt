@@ -14,6 +14,8 @@ public partial class AppEngine
 
     private void InitializeCloud()
     {
+        Resolver.MeadowCloudService.ErrorOccurred += OnCloudErrorOccurred;
+
         Resolver.MeadowCloudService.SendEvent(
             new CloudEvent
             {
@@ -26,10 +28,15 @@ public partial class AppEngine
 
             var _ = c.Value switch
             {
-                > 100 => _displayService.ShowEmoji(Emoji.Laugh),
-                > 50 => _displayService.ShowEmoji(Emoji.Happy),
-                _ => _displayService.ShowEmoji(Emoji.None)
+                > 100 => _displayService?.ShowEmoji(Emoji.Laugh),
+                > 50 => _displayService?.ShowEmoji(Emoji.Happy),
+                _ => _displayService?.ShowEmoji(Emoji.None)
             };
         });
+    }
+
+    private void OnCloudErrorOccurred(object sender, System.Exception e)
+    {
+        Resolver.Log.Info($"CLOUD ERROR: {e.Message}");
     }
 }

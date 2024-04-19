@@ -6,7 +6,7 @@ namespace Tilt;
 
 public partial class AppEngine
 {
-    private DisplayService _displayService;
+    private DisplayService? _displayService;
 
     private void InitializeDisplay(II2cBus i2c, PlatformSettings settings)
     {

@@ -4,6 +4,7 @@ using Meadow.Foundation.Leds;
 using Meadow.Hardware;
 using Meadow.Logging;
 using Meadow.Peripherals.Leds;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Tilt.F7;
@@ -51,6 +52,15 @@ public class FeatherV2App : App<F7FeatherV2>
         _engine = new AppEngine(i2c, settings);
 
         return base.Initialize();
+    }
+
+    public override void OnBootFromCrash(IEnumerable<string> crashReports)
+    {
+        Resolver.Log.Warn("Booting up from crash");
+        foreach (var report in crashReports)
+        {
+            Resolver.Log.Warn(report);
+        }
     }
 
     private void NtpClient_TimeChanged(System.DateTime utcTime)
