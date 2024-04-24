@@ -12,7 +12,8 @@ There are YouTube videos covering some of the more interesting parts of the buil
 - [Remote Commanding from Meadow Cloud](https://youtu.be/h7_TyzFbRtU)  
 - [Configuring from hardware](https://youtu.be/cxtnke1KUNc)  
 - [Measuring Power](https://youtu.be/5RCswohoTgE)  
-
+- [Creating a Portable UI](https://youtu.be/mwr9XI3yDHc)
+  
 ## Schematic
 
 ![](doc/schematic.png)
